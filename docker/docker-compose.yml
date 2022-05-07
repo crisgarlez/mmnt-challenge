@@ -27,7 +27,7 @@ services:
       - app-network
   backend:
     build:
-      context: ./backend/
+      context: ../backend/
       dockerfile: Dockerfile
     image: nodejs
     container_name: mmnt-challenge-backend
