@@ -33,4 +33,4 @@ const updateCustomerSchema = Joi.object({
   userId
 });
 
-module.exports = { getCustomerSchema, createCustomerSchema, updateCustomerSchema };
+module.exports = { getCustomerSchema, getCustomerByUserSchema, createCustomerSchema, updateCustomerSchema };
