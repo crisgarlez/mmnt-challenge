@@ -57,6 +57,9 @@ class ProductsService {
   }
 
   async findOne(id) {
+
+    console.log('findOne');
+    console.log('id', id);
     const product = this.products.find(item => item.id === id);
     if (!product) {
       throw boom.notFound('product not found');
