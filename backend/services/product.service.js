@@ -60,7 +60,7 @@ class ProductsService {
 
     console.log('findOne');
     console.log('id', id);
-    const product = models.products.findByPk(id);
+    const product = await models.Product.findByPk(id);
     if (!product) {
       throw boom.notFound('product not found');
     }
