@@ -5,8 +5,10 @@ const validationHandler = require('../middlewares/validator.handler');
 const {
   createCustomerSchema,
   getCustomerSchema,
+  getCustomerByUserSchema,
   updateCustomerSchema,
 } = require('../schemas/customer.schema');
+const validatorHandler = require("../middlewares/validator.handler");
 
 const router = express.Router();
 const service = new CustomerService();
@@ -18,6 +20,19 @@ router.get('/',  async (req, res, next) => {
     next(error);
   }
 });
+
+router.get('/:userId',
+  validatorHandler(getCustomerByUserSchema, 'params'),
+  async (req, res, next) => {
+    try {
+      const { userId } = req.params;
+      const customer = await service.findByUser(userId);
+      res.json(customer);
+    } catch (error) {
+      next(error);
+    }
+  }
+);
 
 router.post('/',
   validationHandler(createCustomerSchema, 'body'),

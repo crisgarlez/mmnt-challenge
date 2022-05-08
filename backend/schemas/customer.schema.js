@@ -12,6 +12,10 @@ const getCustomerSchema = Joi.object({
   id: id.required(),
 });
 
+const getCustomerByUserSchema = Joi.object({
+  userId: userId.required(),
+});
+
 const createCustomerSchema = Joi.object({
   name: name.required(),
   lastName: lastName.required(),
