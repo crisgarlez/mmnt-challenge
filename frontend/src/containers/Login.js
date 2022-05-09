@@ -38,7 +38,7 @@ const Login = () => {
           Usuario administrador:
         </p>
         <p className='mt-2 text-center text-md text-gray-400'>
-          <span className='font-bold'>email:</span> admin@admin.com,  <span className='font-bold'>password:</span> admin
+          <span className='font-bold'>email:</span> admin@admin.com,  <span className='font-bold'>password:</span> admin123
         </p>
         <p className="mt-2 text-center text-sm text-gray-600">
           o{' '}
