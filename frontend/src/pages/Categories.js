@@ -2,7 +2,7 @@ import React from "react";
 import useGetCategories from "../hooks/useGetCategories";
 import {Link} from "react-router-dom";
 
-const API = 'http://localhost/api/v1/categories';
+const API = process.env.REACT_APP_API_URL + 'api/v1/categories';
 
 const Categories = () => {
   const categories = useGetCategories(API);

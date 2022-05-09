@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from "react-router-dom";
 import useGetOrders from '../hooks/useGetOrders';
 
-const API = 'http://localhost/api/v1/profile/my-orders';
+const API = process.env.REACT_APP_API_URL + 'api/v1/profile/my-orders';
 
 const Profile = () => {
   const history = useNavigate();

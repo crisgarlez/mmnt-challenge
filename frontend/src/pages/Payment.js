@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import useGetCustomer from "../hooks/useGetCustomer";
 
-const API = 'http://localhost/api/v1/customers/';
+const API = process.env.REACT_APP_API_URL + 'api/v1/customers/';
 
 const Payment = () => {
 
@@ -26,10 +26,10 @@ const Payment = () => {
   }
 
   function postOrder(order) {
-    axios.post('http://localhost/api/v1/orders', order)
+    axios.post(process.env.REACT_APP_API_URL + 'api/v1/orders', order)
       .then(response => {
         cart.map(item => {
-          axios.post('http://localhost/api/v1/orders/add-item',{
+          axios.post(process.env.REACT_APP_API_URL + 'api/v1/orders/add-item',{
             "orderId": response.data.id,
             "productId": item.id,
             "amount": item.quantity

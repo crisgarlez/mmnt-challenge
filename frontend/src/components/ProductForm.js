@@ -4,7 +4,7 @@ import axios from "axios";
 import {AppContext} from "../context/AppContext";
 import useGetCategories from "../hooks/useGetCategories";
 
-const API2 = 'http://localhost/api/v1/categories';
+const API2 = process.env.REACT_APP_API_URL + 'api/v1/categories';
 
 const ProductForm = () => {
 
@@ -27,7 +27,7 @@ const ProductForm = () => {
       categoryId: data.category,
     }
 
-    axios.post('http://localhost/api/v1/products', productData, {
+    axios.post(process.env.REACT_APP_API_URL + 'api/v1/products', productData, {
       headers: {
         Authorization: `Bearer ${token}`
       }

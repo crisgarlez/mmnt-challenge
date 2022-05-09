@@ -19,7 +19,7 @@ const CategoryForm = () => {
       image: 'https://picsum.photos/200'
     }
 
-    axios.post('http://localhost/api/v1/categories', employData, {
+    axios.post(process.env.REACT_APP_API_URL + 'api/v1/categories', employData, {
       headers: {
         Authorization: `Bearer ${token}`
       }

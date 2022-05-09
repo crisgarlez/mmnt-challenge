@@ -3,7 +3,7 @@ import {Link, useParams} from "react-router-dom";
 
 import useGetOrderDetail from "../hooks/useGetOrderDetail";
 
-const API = 'http://localhost/api/v1/orders/';
+const API = process.env.REACT_APP_API_URL + 'api/v1/orders/';
 
 const Profile = () => {
   const { id } = useParams();

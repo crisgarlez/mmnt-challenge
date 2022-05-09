@@ -2,7 +2,7 @@ import React from 'react';
 import useGetProducts from "../hooks/useGetProducts";
 import {Link} from "react-router-dom";
 
-const API = 'http://localhost/api/v1/products';
+const API = process.env.REACT_APP_API_URL + 'api/v1/products';
 
 const Products = () => {
 

@@ -22,7 +22,7 @@ const Register = () => {
       }
     }
 
-    axios.post('http://localhost/api/v1/customers', customer)
+    axios.post(process.env.REACT_APP_API_URL + 'api/v1/customers', customer)
       .then(response => {
         setSucess('Usuario creado correctamente');
       }).catch((error) => {

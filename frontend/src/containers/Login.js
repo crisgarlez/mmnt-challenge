@@ -22,7 +22,7 @@ const Login = () => {
       'password': data.password,
     }
 
-    axios.post('http://localhost/api/v1/auth/login', user)
+    axios.post(process.env.REACT_APP_API_URL + 'api/v1/auth/login', user)
       .then(response => {
         login(response.data);
       }).catch((error) => {

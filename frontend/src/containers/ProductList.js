@@ -2,7 +2,7 @@ import React from 'react';
 import ProductItem from '../components/ProductItem';
 import useGetProducts from '../hooks/useGetProducts';
 
-const API = 'http://localhost/api/v1/products';
+const API = process.env.REACT_APP_API_URL + 'api/v1/products';
 
 const ProductList = () => {
   const products = useGetProducts(API);

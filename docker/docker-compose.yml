@@ -59,6 +59,9 @@ services:
       dockerfile: Dockerfile
     image: react
     container_name: mmnt-challenge-frontend
+    env_file: .env
+    environment:
+      - REACT_APP_API_URL=$API_URL
     ports:
       - "80:80"
     volumes:
