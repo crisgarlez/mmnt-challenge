@@ -58,10 +58,16 @@ services:
       context: ../frontend/
       dockerfile: Dockerfile
     image: react
-    container_name: mmnt-challenge-fontend
+    container_name: mmnt-challenge-frontend
+    ports:
+      - "80:80"
     volumes:
-      - ../fontend/:/app
+      - ../frontend/:/app
       - node_modules_front:/app/node_modules
+    networks:
+      - app-network
+    depends_on:
+      - backend
 
 networks:
   app-network:
